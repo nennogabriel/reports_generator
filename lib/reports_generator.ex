@@ -15,7 +15,7 @@ defmodule ReportsGenerator do
   @options ["foods", "users"]
 
   def build(filename) do
-    "reports/#{filename}"
+    filename
     |> Parser.parse_file()
     |> Enum.reduce(report_acc(), fn line, report -> sum_values(line, report) end)
   end
